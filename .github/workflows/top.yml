@@ -21,7 +21,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@master
+      name: Checkout
     - name: Use Node.js ${{ matrix.prod-version }}
       uses: ./.github/workflows/node.js.yml
       with:
