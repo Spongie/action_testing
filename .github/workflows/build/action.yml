@@ -5,10 +5,6 @@ name: "Custom"
 description: "Test"
 on:
   workflow_call:
-    secrets:
-      depl-env:
-        required: true
-        description: 'The environment to run on'
 
 jobs:
 
