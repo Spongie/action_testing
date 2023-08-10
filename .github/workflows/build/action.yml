@@ -1,16 +1,16 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Custom
-
-inputs:
-  depl_env:
-    required: true
-    description: 'The environment to run on'
+name: "Custom"
+description: "Test"
+on:
+  workflow_call:
+    secrets:
+      depl-env:
+        required: true
+        description: 'The environment to run on'
 
 jobs:
-  environment:
-    name: ${{ inputs.depl_env }}
 
   build:
 
@@ -21,4 +21,4 @@ jobs:
     - run: 'echo "$SEC" > key'
       shell: bash
       env:
-        SEC: ${{ secrets.depl_env }}
+        SEC: ${{ secrets.depl-env }}

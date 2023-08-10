@@ -7,25 +7,30 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  depl-env: dev
-
 jobs:
-  build:
+  prod1:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        prod-version: [prod1, prod2]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    environment: prod1
 
     steps:
     - uses: actions/checkout@master
       name: Checkout
-    - name: Use Node.js ${{ matrix.prod-version }}
+    - name: Use Node.js prod1
       uses: ./.github/workflows/build/
       with:
-        depl_env: ${{ matrix.prod-version }}
+        depl-env: ${{ secrets.AZURE_TEST }}
+  prod2:
+
+    runs-on: ubuntu-latest
+    environment: prod2
+
+    steps:
+    - uses: actions/checkout@master
+      name: Checkout
+    - name: Use Node.js prod1
+      uses: ./.github/workflows/build/
+      with:
+        depl-env: ${{ secrets.AZURE_TEST }}
 
 
