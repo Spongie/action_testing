@@ -18,7 +18,7 @@ jobs:
       name: ${{ inputs.environment }}
     steps:
     - uses: actions/checkout@master
-    - run: 'echo "$SEC" > key'
+    - run: 'echo "$SEC"'
       shell: bash
       env:
         SEC: ${{ secrets.AZURE_TEST }}
