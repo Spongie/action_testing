@@ -3,10 +3,12 @@
 
 name: "Custom"
 description: "Test"
-inputs:
-  depl-env:
-    required: true
-    description: 'The environment to run on'
+on:
+  workflow_call:
+    secrets:
+      depl-env:
+        required: true
+        description: 'The environment to run on'
 
 jobs:
 
