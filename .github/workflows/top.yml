@@ -12,7 +12,7 @@ jobs:
     strategy:
         matrix:
           target: [prod1, prod2]
-    uses: ./.github/workflows/build/action.yml
+    uses: ./.github/workflows/build.yml
     with:
         environment: ${{ matrix.target }}
     secrets: inherit
