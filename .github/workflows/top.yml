@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - name: Use Node.js ${{ matrix.prod-version }}
-      uses: ./github/workflows/node.js.yml
+      uses: ./.github/workflows/node.js.yml
       with:
         depl-env: ${{ matrix.prod-version }}
 
