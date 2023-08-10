@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@master
       name: Checkout
     - name: Use Node.js ${{ matrix.prod-version }}
-      uses: ./.github/workflows/node.js.yml
+      uses: ./.github/workflows/build/
       with:
         depl-env: ${{ matrix.prod-version }}
 
