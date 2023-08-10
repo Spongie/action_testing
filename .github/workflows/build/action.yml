@@ -17,7 +17,7 @@ on:
 
 jobs:
   environment:
-    name: ${{inputs.depl_env}}
+    name: ${{github.event.inputs.depl_env}}
 
   build:
 
