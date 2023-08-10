@@ -3,8 +3,10 @@
 
 name: "Custom"
 description: "Test"
-on:
-  workflow_call:
+inputs:
+  depl-env:
+    required: true
+    description: 'The environment to run on'
 
 jobs:
 
@@ -17,4 +19,4 @@ jobs:
     - run: 'echo "$SEC" > key'
       shell: bash
       env:
-        SEC: ${{ secrets.depl-env }}
+        SEC: ${{ inputs.depl-env }}

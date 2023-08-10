@@ -12,13 +12,14 @@ jobs:
 
     runs-on: ubuntu-latest
     environment: prod1
-
+    
     steps:
     - uses: actions/checkout@master
-      name: Checkout
-    - name: Use Node.js prod1
-      uses: ./.github/workflows/build/
-      secrets: inherit
+    - uses: ./.github/workflows/build/
+      with:
+        depl-env: ${{ secrets.AZURE_TEST }}
+      
+      
   prod2:
 
     runs-on: ubuntu-latest
@@ -27,8 +28,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
       name: Checkout
-    - name: Use Node.js prod1
+    - name: Use Node.js prod2
       uses: ./.github/workflows/build/
-      secrets: inherit
+      with:
+        depl-env: ${{ secrets.AZURE_TEST }}
 
 
