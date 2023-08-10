@@ -9,11 +9,6 @@ on:
         depl_env:
             required: true
             type: string
-  workflow_dispatch:
-    inputs:
-        depl_env:
-            required: true
-            type: string
 
 jobs:
   environment:
