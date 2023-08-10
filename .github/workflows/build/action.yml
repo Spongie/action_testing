@@ -5,20 +5,20 @@ name: "Custom"
 description: "Test"
 on:
   workflow_call:
-    secrets:
-      depl-env:
+    inputs:
+      environment:
         required: true
-        description: 'The environment to run on'
 
 jobs:
-
+  
   build:
 
     runs-on: ubuntu-latest
-
+    environment: 
+      name: ${{ inputs.environment }}
     steps:
     - uses: actions/checkout@master
     - run: 'echo "$SEC" > key'
       shell: bash
       env:
-        SEC: ${{ inputs.depl-env }}
+        SEC: ${{ secrets.AZURE_TEST }}
