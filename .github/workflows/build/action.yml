@@ -6,6 +6,7 @@ name: Node.js CI
 inputs:
   depl_env:
     required: true
+    default: 'dev'
     type: string
 
 jobs:
