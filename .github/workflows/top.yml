@@ -26,6 +26,6 @@ jobs:
     - name: Use Node.js ${{ matrix.prod-version }}
       uses: ./.github/workflows/build/
       with:
-        depl-env: ${{ matrix.prod-version }}
+        depl_env: ${{ matrix.prod-version }}
 
 
