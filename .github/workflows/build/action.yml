@@ -13,7 +13,7 @@ on:
 
 jobs:
   environment:
-    name: ${{inputs.depl_env}}
+    name: ${{ inputs.depl_env }}
 
   build:
 
@@ -24,4 +24,4 @@ jobs:
     - run: 'echo "$SEC" > key'
       shell: bash
       env:
-        SEC: ${{secrets.AZURE_TEST}}
+        SEC: ${{ secrets.AZURE_TEST }}
