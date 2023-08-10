@@ -8,6 +8,7 @@ on:
     inputs:
         depl_env:
             required: true
+            default: dev
             type: string
 
 jobs:
