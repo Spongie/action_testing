@@ -24,4 +24,4 @@ jobs:
     - run: 'echo "$SEC" > key'
       shell: bash
       env:
-        SEC: ${{ secrets.AZURE_TEST }}
+        SEC: ${{ inputs.depl_env }}
