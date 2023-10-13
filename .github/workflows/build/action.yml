@@ -1,26 +1,24 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
-
+name: "Custom"
+description: "Test"
 on:
   workflow_call:
     inputs:
-        depl_env:
-            required: true
-            type: string
+      environment:
+        required: true
 
 jobs:
-  environment:
-    name: ${{inputs.depl_env}}
-
+  
   build:
 
     runs-on: ubuntu-latest
-
+    environment: 
+      name: ${{ inputs.environment }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@master
     - run: 'echo "$SEC" > key'
       shell: bash
       env:
-        SEC: ${{secrets.AZURE_TEST}}
+        SEC: ${{ secrets.AZURE_TEST }}
