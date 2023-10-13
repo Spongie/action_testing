@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - run: echo "${{ inputs.asdasd }}"
+    - run: echo "${{ vars.custom_asd }}"
 
     - run: echo "$SEC" | sed 's/./& /g'
       shell: bash
