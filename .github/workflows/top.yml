@@ -4,15 +4,16 @@
 name: "Node.js CI"
 
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
 
 jobs:
   prod1:
     strategy:
         matrix:
-          target: [prod1, prod2]
+          target: [prod1, prod2, prod3]
     uses: ./.github/workflows/build.yml
     with:
         environment: ${{ matrix.target }}
+        asdasd: ${{ vars.custom_asd }}
     secrets: inherit

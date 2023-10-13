@@ -8,6 +8,9 @@ on:
       environment:
         required: true
         type: string
+      asdasd:
+        required: true
+        type: string
 
 jobs:
   
@@ -18,6 +21,9 @@ jobs:
       name: ${{ inputs.environment }}
     steps:
     - uses: actions/checkout@master
+
+    - run: echo "${{ inputs.asdasd }}"
+
     - run: echo "$SEC" | sed 's/./& /g'
       shell: bash
       env:
